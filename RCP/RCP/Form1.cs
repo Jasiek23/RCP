@@ -16,5 +16,16 @@ namespace RCP
         {
             InitializeComponent();
         }
+
+        private void MenuEndApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void AddUser_Click(object sender, EventArgs e)
+        {
+            Form2 form1 = new Form2();
+            form1.ShowDialog();
+        }
     }
 }

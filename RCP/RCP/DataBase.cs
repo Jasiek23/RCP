@@ -10,6 +10,6 @@ namespace RCP
 {
     class DataBase
     {
-       
+       string dataBaseName = new string();
     }
 }

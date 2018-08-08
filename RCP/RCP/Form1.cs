@@ -27,5 +27,11 @@ namespace RCP
             Form2 form1 = new Form2();
             form1.ShowDialog();
         }
+
+        private void polaczZBazaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataBase dbInit = new DataBase();
+            dbInit.dataBaseConnection();
+        }
     }
 }

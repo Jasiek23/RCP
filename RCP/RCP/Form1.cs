@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace RCP
 {
@@ -30,8 +31,8 @@ namespace RCP
 
         private void polaczZBazaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataBase dbInit = new DataBase();
-            dbInit.dataBaseConnection();
+            DataBaseConnection connToDb = new DataBaseConnection();
+            connToDb.dataBaseConn();
         }
     }
 }

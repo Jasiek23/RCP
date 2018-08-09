@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace RCP
 {
@@ -16,6 +17,21 @@ namespace RCP
         public Form2()
         {
             InitializeComponent();
+        }
+
+        private void AddUserButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddUser addNewUser = new AddUser();
+
+                addNewUser.addUsers(textBox1.Text, textBox2.Text, dateTimePicker1.Text, textBox3.Text, comboBox1.Text);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

@@ -117,6 +117,11 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Dział 1",
+            "Dział 2",
+            "Dział 3",
+            "Dział 4"});
             this.comboBox1.Location = new System.Drawing.Point(97, 140);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 21);
@@ -130,6 +135,7 @@
             this.AddUserButton.TabIndex = 10;
             this.AddUserButton.Text = "Dodaj";
             this.AddUserButton.UseVisualStyleBackColor = true;
+            this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
             // Form2
             // 

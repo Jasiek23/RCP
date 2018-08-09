@@ -11,20 +11,15 @@ namespace RCP
 {
     class DataBaseConnection
     {
-        public string connectionString = "server=localhost; user=root; database=rcp; SslMode=none";
+       static string connectionString = "server=localhost; user=root; database=rcp; SslMode=none";
 
-        public void dataBaseConn()
-        {
+
             MySqlConnection connToDb = new MySqlConnection(connectionString);
-            try
-            {
-                connToDb.Open();
-                MessageBox.Show("Połączono z bazą danych");
-            }
-            catch
-            {
-                MessageBox.Show("Błąd połączenia z bazą danych");
-            }
+
+        public void dataBaseClose()
+        {
+            MySqlConnection connClose = new MySqlConnection(connectionString);
+            connClose.Close();
         }
     }
 }

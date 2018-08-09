@@ -31,8 +31,8 @@ namespace RCP
 
         private void polaczZBazaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataBaseConnection connToDb = new DataBaseConnection();
-            connToDb.dataBaseConn();
+           /* DataBaseConnection connToDb = new DataBaseConnection();
+            connToDb.dataBaseConn();*/
         }
     }
 }

@@ -10,8 +10,8 @@ namespace RCP
 {
     class AddUser
     {
-        static string connectionString = "server=localhost; user=root; database=rcp; SslMode=none";
-        MySqlConnection connToDb = new MySqlConnection(connectionString);
+        DataBaseConnection dbConn = new DataBaseConnection();
+
         public void addUsers(string names, string surnames, string date, string positions, string dep)
         {
             string name = names;
@@ -20,26 +20,20 @@ namespace RCP
             string position = positions;
             string department = dep;
 
-            string insterUser = "INSERT INTO rcp.user(name, surname, data, position, department) VALUES('" + name + "','" + surname + "','" + dateOfBirth + "','" + position + "'," + department + " )";
-            connToDb.Open();
-            MySqlCommand command = new MySqlCommand(insterUser, connToDb);
+            string insterUser = "INSERT INTO user(name, surname, data, position, department) VALUES('" + name + "','" + surname + "','" + dateOfBirth+ "','" + position + "','" + department + "')";
+            MySqlCommand command = new MySqlCommand(insterUser, dbConn.connToDb);
+            dbConn.connToDb.Open();
             try
             {
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    MessageBox.Show("Użytkownik został dodany");
-                }
-                else
-
-                {
-                    MessageBox.Show("Wystąpił błąd podczas dodawanai użytkownika");
-                }
+                command.ExecuteNonQuery();
+                MessageBox.Show("Użytkownik został dodany");
+             
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            connToDb.Close();
+            dbConn.connToDb.Close();
         }
     }
 }

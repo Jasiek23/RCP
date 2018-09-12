@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Drawing.Imaging;
 
 namespace RCP
 {
@@ -22,9 +23,20 @@ namespace RCP
 
         private void AddUserButton_Click(object sender, EventArgs e)
         {
+            string file = @"C:\Users\JUchto\Downloads\1.jpg";
+            Size s = pictureBox1.Size;
+            Bitmap memoryImage = new Bitmap(s.Width, s.Height);
+            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+            Point ScreenPos = this.pictureBox1.PointToScreen(new Point(0, 0));
+            memoryGraphics.CopyFromScreen(ScreenPos.X, ScreenPos.Y, 0, 0, s);
+            memoryImage.Save(file);
+
             MemoryStream ms = new MemoryStream();
-            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+            pictureBox1.Image = Image.FromFile(file);
+            Image img = pictureBox1.Image;
+            img.Save(ms, pictureBox1.Image.RawFormat);
             byte[] qr = ms.ToArray();
+
 
             try
             {
@@ -42,6 +54,7 @@ namespace RCP
         {
             Zen.Barcode.CodeQrBarcodeDraw userQRcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
             pictureBox1.Image = userQRcode.Draw(textBox1.Text, 200);
+
             AddUserButton.Visible = true;
         }
     }

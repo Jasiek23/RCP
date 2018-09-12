@@ -34,7 +34,7 @@
             this.MenuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.AddUser = new System.Windows.Forms.ToolStripMenuItem();
             this.DelUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.polaczZBazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.edytujUżytkownikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             this.MenuUsers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddUser,
             this.DelUser,
-            this.polaczZBazaToolStripMenuItem});
+            this.edytujUżytkownikaToolStripMenuItem});
             this.MenuUsers.Name = "MenuUsers";
             this.MenuUsers.Size = new System.Drawing.Size(86, 20);
             this.MenuUsers.Text = "Użytkownicy";
@@ -87,12 +87,11 @@
             this.DelUser.Size = new System.Drawing.Size(180, 22);
             this.DelUser.Text = "Usuń użytkownika";
             // 
-            // polaczZBazaToolStripMenuItem
+            // edytujUżytkownikaToolStripMenuItem
             // 
-            this.polaczZBazaToolStripMenuItem.Name = "polaczZBazaToolStripMenuItem";
-            this.polaczZBazaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.polaczZBazaToolStripMenuItem.Text = "polacz z baza";
-            this.polaczZBazaToolStripMenuItem.Click += new System.EventHandler(this.polaczZBazaToolStripMenuItem_Click);
+            this.edytujUżytkownikaToolStripMenuItem.Name = "edytujUżytkownikaToolStripMenuItem";
+            this.edytujUżytkownikaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.edytujUżytkownikaToolStripMenuItem.Text = "Edytuj użytkownika";
             // 
             // Form1
             // 
@@ -118,7 +117,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuUsers;
         private System.Windows.Forms.ToolStripMenuItem AddUser;
         private System.Windows.Forms.ToolStripMenuItem DelUser;
-        private System.Windows.Forms.ToolStripMenuItem polaczZBazaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem edytujUżytkownikaToolStripMenuItem;
     }
 }
 

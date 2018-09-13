@@ -34,5 +34,11 @@ namespace RCP
            /* DataBaseConnection connToDb = new DataBaseConnection();
             connToDb.dataBaseConn();*/
         }
+
+        private void edytujUżytkownikaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
+        }
     }
 }

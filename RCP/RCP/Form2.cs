@@ -53,8 +53,8 @@ namespace RCP
         private void button1_Click(object sender, EventArgs e)
         {
             Zen.Barcode.CodeQrBarcodeDraw userQRcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
-            pictureBox1.Image = userQRcode.Draw(textBox1.Text, 200);
-
+            pictureBox1.Image = userQRcode.Draw(textBox1.Text + " " + textBox2.Text,  200);
+           
             AddUserButton.Visible = true;
         }
     }

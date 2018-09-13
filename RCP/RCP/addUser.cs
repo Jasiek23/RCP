@@ -22,8 +22,8 @@ namespace RCP
             string department = dep;
             byte[] qrcode = qrcodes;
 
-            string insterUser = "INSERT INTO user(name, surname, data, position, department, qrcode) VALUES('" + name + "','" + surname + "','" + dateOfBirth+ "','" + position + "','" + department + "','" + qrcode + "')";
-            MySqlCommand command = new MySqlCommand(insterUser, dbConn.connToDb);
+            string insertUser = "INSERT INTO user(name, surname, data, position, department, qrcode) VALUES('" + name + "','" + surname + "','" + dateOfBirth+ "','" + position + "','" + department + "','" + qrcode + "')";
+            MySqlCommand command = new MySqlCommand(insertUser, dbConn.connToDb);
             dbConn.connToDb.Open();
             try
             {

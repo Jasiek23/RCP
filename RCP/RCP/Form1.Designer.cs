@@ -92,6 +92,7 @@
             this.edytujUżytkownikaToolStripMenuItem.Name = "edytujUżytkownikaToolStripMenuItem";
             this.edytujUżytkownikaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.edytujUżytkownikaToolStripMenuItem.Text = "Edytuj użytkownika";
+            this.edytujUżytkownikaToolStripMenuItem.Click += new System.EventHandler(this.edytujUżytkownikaToolStripMenuItem_Click);
             // 
             // Form1
             // 

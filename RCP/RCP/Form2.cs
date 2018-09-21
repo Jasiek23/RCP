@@ -57,5 +57,14 @@ namespace RCP
            
             AddUserButton.Visible = true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CardGenerator generateUserCard = new CardGenerator();
+            string file = @"C:\Users\JUchto\Downloads\1.jpg";
+            iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(file);
+            image.ScaleToFit(90f, 90f);
+            generateUserCard.GenerateCard(textBox1, textBox2, textBox3, image);
+        }
     }
 }

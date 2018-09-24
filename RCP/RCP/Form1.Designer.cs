@@ -35,7 +35,12 @@
             this.AddUser = new System.Windows.Forms.ToolStripMenuItem();
             this.DelUser = new System.Windows.Forms.ToolStripMenuItem();
             this.edytujUżytkownikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -77,34 +82,76 @@
             // AddUser
             // 
             this.AddUser.Name = "AddUser";
-            this.AddUser.Size = new System.Drawing.Size(180, 22);
+            this.AddUser.Size = new System.Drawing.Size(176, 22);
             this.AddUser.Text = "Dodaj użytkownika";
             this.AddUser.Click += new System.EventHandler(this.AddUser_Click);
             // 
             // DelUser
             // 
             this.DelUser.Name = "DelUser";
-            this.DelUser.Size = new System.Drawing.Size(180, 22);
+            this.DelUser.Size = new System.Drawing.Size(176, 22);
             this.DelUser.Text = "Usuń użytkownika";
             // 
             // edytujUżytkownikaToolStripMenuItem
             // 
             this.edytujUżytkownikaToolStripMenuItem.Name = "edytujUżytkownikaToolStripMenuItem";
-            this.edytujUżytkownikaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.edytujUżytkownikaToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.edytujUżytkownikaToolStripMenuItem.Text = "Edytuj użytkownika";
             this.edytujUżytkownikaToolStripMenuItem.Click += new System.EventHandler(this.edytujUżytkownikaToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 97);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(201, 192);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(219, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Wejście";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(219, 126);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Wyjście";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 295);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(201, 21);
+            this.comboBox1.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 334);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "RCP";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +166,10 @@
         private System.Windows.Forms.ToolStripMenuItem AddUser;
         private System.Windows.Forms.ToolStripMenuItem DelUser;
         private System.Windows.Forms.ToolStripMenuItem edytujUżytkownikaToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

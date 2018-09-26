@@ -63,7 +63,7 @@ namespace RCP
             CardGenerator generateUserCard = new CardGenerator();
             string file = @"C:\Users\JUchto\Downloads\1.jpg";
             iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(file);
-            image.ScaleToFit(90f, 90f);
+            image.ScaleToFit(120f, 120f);
             generateUserCard.GenerateCard(textBox1, textBox2, textBox3, image);
         }
     }

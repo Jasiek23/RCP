@@ -79,6 +79,9 @@ namespace RCP
             FinalFrame = new VideoCaptureDevice(CaptureDevice[comboBox1.SelectedIndex].MonikerString);
             FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
             FinalFrame.Start();
+            button2.Visible = true;
+            button3.Visible = true;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -96,14 +99,19 @@ namespace RCP
             {
                 string decode = result.ToString().Trim();
                 if (decode != "")
-                    timer1.Stop();
-                textBox1.Text = decode;
-                MessageBox.Show(decode);
+                timer1.Stop();
+                MessageBox.Show("Witaj\n" + decode, DateTime.Now.ToString());
             }
             catch
             {
 
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            timer1.Start();
         }
     }
 }

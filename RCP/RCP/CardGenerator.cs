@@ -15,22 +15,26 @@ namespace RCP
         public void GenerateCard(TextBox name, TextBox surname, TextBox position, Image qrcode)
         {
             var pdfDoc = new Document(PageSize.A4, 40f, 40f, 60f, 60f);
+            var boldFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.GRAY);
+            var userCard = new PdfPTable(2);
+            userCard.HorizontalAlignment = Element.ALIGN_LEFT;
+            userCard.WidthPercentage = 50;
+            PdfPCell cell = new PdfPCell(qrcode);
+            cell.Rowspan = 6;
+            userCard.AddCell(cell);
+            cell = new PdfPCell(new Phrase(new Chunk("Imie:", boldFont)));
+            userCard.AddCell(cell);
+            cell = new PdfPCell(new Phrase(name.Text));
+            userCard.AddCell(cell);
+            cell = new PdfPCell(new Phrase(new Chunk("Nazwisko:", boldFont)));
+            userCard.AddCell(cell);
+            cell = new PdfPCell(new Phrase(surname.Text));
+            userCard.AddCell(cell);
+            cell = new PdfPCell(new Phrase(new Chunk("Stanowisko:", boldFont)));
+            userCard.AddCell(cell);
+            cell = new PdfPCell(new Phrase(position.Text));
+            userCard.AddCell(cell);
 
-            var userCard = new PdfPTable(new[] { .75f, 2f})
-            {
-                HorizontalAlignment = Element.ALIGN_LEFT,
-                WidthPercentage = 50,
-                DefaultCell = { MinimumHeight = 22f }
-            };
-
-            userCard.AddCell("Imie:");
-            userCard.AddCell(name.Text);
-            userCard.AddCell("Nazwisko:");
-            userCard.AddCell(surname.Text);
-            userCard.AddCell("Stanowisko:");
-            userCard.AddCell(position.Text);
-            userCard.AddCell("Kod:");
-            userCard.AddCell(new PdfPCell(qrcode));
 
             SaveFileDialog save = new SaveFileDialog();
             save.DefaultExt = ".pdf";

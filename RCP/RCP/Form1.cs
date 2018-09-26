@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using AForge;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using ZXing;
 using ZXing.QrCode;
+using ZXing.Aztec;
 
 namespace RCP
 {
@@ -77,6 +79,31 @@ namespace RCP
             FinalFrame = new VideoCaptureDevice(CaptureDevice[comboBox1.SelectedIndex].MonikerString);
             FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
             FinalFrame.Start();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            timer1.Start();
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            BarcodeReader QrReader = new BarcodeReader();
+            Result result = QrReader.Decode((Bitmap)pictureBox1.Image);
+
+            try
+            {
+                string decode = result.ToString().Trim();
+                if (decode != "")
+                    timer1.Stop();
+                textBox1.Text = decode;
+                MessageBox.Show(decode);
+            }
+            catch
+            {
+
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace RCP
 
         private void AddUserButton_Click(object sender, EventArgs e)
         {
-            string file = @"C:\Users\JUchto\Downloads\1.jpg";
+            string file = Application.ExecutablePath + "qr.jpg";
             Size s = pictureBox1.Size;
             Bitmap memoryImage = new Bitmap(s.Width, s.Height);
             Graphics memoryGraphics = Graphics.FromImage(memoryImage);
@@ -61,7 +61,7 @@ namespace RCP
         private void button2_Click(object sender, EventArgs e)
         {
             CardGenerator generateUserCard = new CardGenerator();
-            string file = @"C:\Users\JUchto\Downloads\1.jpg";
+            string file = Application.ExecutablePath + "qr.jpg";
             iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(file);
             image.ScaleToFit(120f, 120f);
             generateUserCard.GenerateCard(textBox1, textBox2, textBox3, image);

@@ -13,7 +13,7 @@ namespace RCP
     {
         DataBaseConnection dbConn = new DataBaseConnection();
 
-        public void addUsers(string names, string surnames, string date, string positions, string dep, byte [] qrcodes)
+        public void addUsers(string names, string surnames, string date, string positions, string dep, byte [] qrcodes, string cardNumber)
         {
             string name = names;
             string surname = surnames;
@@ -21,8 +21,9 @@ namespace RCP
             string position = positions;
             string department = dep;
             byte[] qrcode = qrcodes;
+            string card = cardNumber;
 
-            string insertUser = "INSERT INTO user(name, surname, data, position, department, qrcode) VALUES('" + name + "','" + surname + "','" + dateOfBirth+ "','" + position + "','" + department + "','" + qrcode + "')";
+            string insertUser = "INSERT INTO user(name, surname, data, position, department, qrcode, card) VALUES('" + name + "','" + surname + "','" + dateOfBirth+ "','" + position + "','" + department + "','" + qrcode + "','" + cardNumber + "')";
             MySqlCommand command = new MySqlCommand(insertUser, dbConn.connToDb);
             dbConn.connToDb.Open();
             try

@@ -41,7 +41,7 @@ namespace RCP
             try
             {
                 AddUser addNewUser = new AddUser();
-                addNewUser.addUsers(textBox1.Text, textBox2.Text, dateTimePicker1.Text, textBox3.Text, comboBox1.Text, qr);
+                addNewUser.addUsers(textBox1.Text, textBox2.Text, dateTimePicker1.Text, textBox3.Text, comboBox1.Text, qr, textBox4.Text);
             }
             catch(Exception ex)
             {
@@ -52,10 +52,13 @@ namespace RCP
 
         private void button1_Click(object sender, EventArgs e)
         {
+            CardNumber randomCardNo = new CardNumber();
+            textBox4.Text = randomCardNo.CardNumberRandom();
             Zen.Barcode.CodeQrBarcodeDraw userQRcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
             pictureBox1.Image = userQRcode.Draw(textBox1.Text + " " + textBox2.Text,  200);
            
-            AddUserButton.Visible = true;
+            AddUserButton.Enabled = true;
+            button2.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)

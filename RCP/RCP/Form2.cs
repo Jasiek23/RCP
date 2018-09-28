@@ -55,7 +55,7 @@ namespace RCP
             CardNumber randomCardNo = new CardNumber();
             textBox4.Text = randomCardNo.CardNumberRandom();
             Zen.Barcode.CodeQrBarcodeDraw userQRcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
-            pictureBox1.Image = userQRcode.Draw(textBox1.Text + " " + textBox2.Text,  200);
+            pictureBox1.Image = userQRcode.Draw(textBox4.Text,  200);
            
             AddUserButton.Enabled = true;
             button2.Enabled = true;

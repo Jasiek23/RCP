@@ -100,7 +100,7 @@ namespace RCP
                 string decode = result.ToString().Trim();
                 if (decode != "")
                 timer1.Stop();
-                MessageBox.Show("Witaj\n" + decode, DateTime.Now.ToString());
+                MessageBox.Show("Witaj użytkowniku: " + decode, DateTime.Now.ToString());
             }
             catch
             {

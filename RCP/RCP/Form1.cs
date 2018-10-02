@@ -103,7 +103,7 @@ namespace RCP
                 timer1.Stop();
                 DateTime date = DateTime.UtcNow.ToLocalTime();
                 string day = date.ToString("dd-MM-yy");
-                string time = date.ToString("hh:mm:ss");
+                string time = date.ToString("H:mm:ss");
                 userInOut.inMethod(decode, day, time);
                 MessageBox.Show("Witaj użytkowniku: " + decode, DateTime.Now.ToString());
             }
@@ -132,7 +132,7 @@ namespace RCP
                     timer2.Stop();
                 DateTime date = DateTime.UtcNow.ToLocalTime();
                 string day = date.ToString("dd-MM-yy");
-                string time = date.ToString("hh:mm:ss");
+                string time = date.ToString("H:mm:ss");
                 userInOut.outMethod(decode, day, time);
                 MessageBox.Show("Uzytkowniku: " + decode + " Do zobaczeni jutro" , DateTime.Now.ToString());
             }

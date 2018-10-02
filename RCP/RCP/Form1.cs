@@ -94,12 +94,17 @@ namespace RCP
         {
             BarcodeReader QrReader = new BarcodeReader();
             Result result = QrReader.Decode((Bitmap)pictureBox1.Image);
+            InOut userInOut = new InOut();
 
             try
             {
                 string decode = result.ToString().Trim();
                 if (decode != "")
                 timer1.Stop();
+                DateTime date = DateTime.UtcNow.ToLocalTime();
+                string day = date.ToString("dd-MM-yy");
+                string time = date.ToString("hh:mm:ss");
+                userInOut.inMethod(decode, day, time);
                 MessageBox.Show("Witaj użytkowniku: " + decode, DateTime.Now.ToString());
             }
             catch
@@ -110,8 +115,31 @@ namespace RCP
 
         private void button3_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
-            timer1.Start();
+            timer2.Enabled = true;
+            timer2.Start();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            BarcodeReader QrReader = new BarcodeReader();
+            Result result = QrReader.Decode((Bitmap)pictureBox1.Image);
+            InOut userInOut = new InOut();
+
+            try
+            {
+                string decode = result.ToString().Trim();
+                if (decode != "")
+                    timer2.Stop();
+                DateTime date = DateTime.UtcNow.ToLocalTime();
+                string day = date.ToString("dd-MM-yy");
+                string time = date.ToString("hh:mm:ss");
+                userInOut.outMethod(decode, day, time);
+                MessageBox.Show("Uzytkowniku: " + decode + " Do zobaczeni jutro" , DateTime.Now.ToString());
+            }
+            catch
+            {
+
+            }
         }
     }
 }

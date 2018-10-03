@@ -79,6 +79,7 @@ namespace RCP
             FinalFrame = new VideoCaptureDevice(CaptureDevice[comboBox1.SelectedIndex].MonikerString);
             FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
             FinalFrame.Start();
+            System.Threading.Thread.Sleep(4000);
             button2.Visible = true;
             button3.Visible = true;
 

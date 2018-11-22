@@ -33,7 +33,6 @@ namespace RCP
                     {
                         readData.Read();
                         checkCard = readData.GetString("card");
-                        MessageBox.Show("jest");
                     }
                     else
                     {

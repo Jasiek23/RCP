@@ -24,6 +24,9 @@ namespace RCP
         {
             SelectUsers select = new SelectUsers();
             select.selectUser(comboBox1.Text, textBox1.Text, textBox2.Text, dataGridView1);
+            Edycja.Text = "Edytuj";
+            Edycja.Visible = true;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -36,7 +39,9 @@ namespace RCP
         {
             if(e.ColumnIndex == 0)
             {
-                MessageBox.Show("info");
+                MessageBox.Show("klik" + e.RowIndex);
+                Form4 form4 = new Form4();
+                form4.ShowDialog();
             }
         }
     }

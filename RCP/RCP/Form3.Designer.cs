@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edycja = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
+            this.Edycja});
             this.dataGridView1.Location = new System.Drawing.Point(27, 145);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(756, 284);
@@ -127,12 +127,12 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Column1
+            // Edycja
             // 
-            this.Column1.HeaderText = "Edycja";
-            this.Column1.Name = "Column1";
-            this.Column1.Text = "Edycja";
-            this.Column1.ToolTipText = "Edycja";
+            this.Edycja.HeaderText = "Edycja";
+            this.Edycja.Name = "Edycja";
+            this.Edycja.Text = "Edytuj";
+            this.Edycja.Visible = false;
             // 
             // Form3
             // 
@@ -167,6 +167,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.DataGridViewButtonColumn Edycja;
     }
 }

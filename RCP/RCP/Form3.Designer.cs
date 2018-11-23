@@ -51,6 +51,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(756, 284);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // comboBox1
             // 
@@ -130,6 +131,8 @@
             // 
             this.Column1.HeaderText = "Edycja";
             this.Column1.Name = "Column1";
+            this.Column1.Text = "Edycja";
+            this.Column1.ToolTipText = "Edycja";
             // 
             // Form3
             // 

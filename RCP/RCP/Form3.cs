@@ -31,5 +31,13 @@ namespace RCP
             PDFexport pdfExport = new PDFexport();
             pdfExport.exportToPdf(dataGridView1, "users");
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 0)
+            {
+                MessageBox.Show("info");
+            }
+        }
     }
 }

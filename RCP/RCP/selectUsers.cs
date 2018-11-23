@@ -16,7 +16,7 @@ namespace RCP
         
         public void selectUser(string depBox, string name, string surname, DataGridView dgvUsers)
         {
-            string select = "SELECT name, surname, position FROM user WHERE department = '" + depBox +"' OR name = '" + name + "' OR surname = '" + surname + "'";
+            string select = "SELECT name, surname, position, department, card FROM user WHERE department = '" + depBox +"' OR name = '" + name + "' OR surname = '" + surname + "'";
             MySqlCommand command = new MySqlCommand(select, dbConn.connToDb);
             dbConn.connToDb.Open();
             try

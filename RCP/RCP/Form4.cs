@@ -12,7 +12,7 @@ namespace RCP
 {
     public partial class Form4 : Form
     {
-        public Form4()
+        public Form4(Form3 form3)
         {
             InitializeComponent();
         }

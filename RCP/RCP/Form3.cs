@@ -13,11 +13,20 @@ using iTextSharp.text.html.simpleparser;
 
 namespace RCP
 {
-    public partial class Form3 : Form
+    public partial class Form3 : Form, Sender
     {
         public Form3()
         {
             InitializeComponent();
+        }
+
+        public void Send(string name, string surname, string position, string department, string card)
+        {
+            string n = name;
+            string s = surname;
+            string p = position;
+            string d = department;
+            string c = card;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,8 +47,8 @@ namespace RCP
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.ColumnIndex == 0)
-            {
-                MessageBox.Show("klik" + e.RowIndex);
+            { 
+                Send(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
                 Form4 form4 = new Form4();
                 form4.ShowDialog();
             }

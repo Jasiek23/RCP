@@ -12,7 +12,6 @@ namespace RCP
 {
     public partial class Form4 : Form
     {
-        private Form3 form_3;
         public Form4(string data1, string data2, string data3, string data4, string data5)
         { 
             InitializeComponent();
@@ -21,6 +20,7 @@ namespace RCP
             textBox3.Text = data3;
             textBox4.Text = data4;
             textBox5.Text = data5;
+            label7.Text = data1 + " " + data2;
         }
     }
 }
